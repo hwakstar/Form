@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    tools:context=".MainActivity">
+
+    <TableLayout
+        android:id="@+id/Menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        android:background="#000"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent">
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btnClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_close"
+                android:layout_marginLeft="10dp"
+                android:background="#000" />
+            <TextView
+                android:id="@+id/lblStreamingTimer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAlignment="center"
+                android:textColor="#FFEB3B"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/previewContainer" />
+            <Button
+                android:id="@+id/btnFlash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_flash"
+                android:layout_marginRight="10dp"
+                android:visibility="invisible"
+                android:background="#000"/>
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:id="@+id/previewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000"
+        android:gravity="top|center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/Menu">
+
+        <SurfaceView
+            android:id="@+id/surfaceViewPreview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/simpleTableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        app:layout_constraintTop_toBottomOf="@+id/Menu">
+
+        <TableRow
+            android:id="@+id/btnRow"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btnRecord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-5dip"
+                android:layout_marginTop="-6dip"
+                android:layout_marginRight="-5dip"
+                android:layout_marginBottom="-5dip"
+                android:alpha="0.5"
+                android:background="@color/cardview_dark_background"
+                android:drawableTop="@drawable/ic_video"
+                android:drawablePadding="-65dp"
+                android:drawableTint="#FFF"
+                android:minHeight="232dp"
+                android:paddingTop="100dp"
+                android:text="RECORD"
+                android:textColor="#FFF" />
+            <Button
+                android:id="@+id/btnLive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-5dip"
+                android:layout_marginTop="-6dip"
+                android:layout_marginRight="-5dip"
+                android:layout_marginBottom="-5dip"
+                android:alpha="0.5"
+                android:background="@color/cardview_dark_background"
+                android:drawableTop="@drawable/ic_antena"
+                android:drawablePadding="-65dp"
+                android:minHeight="232dp"
+                android:paddingTop="100dp"
+                android:text="GO LIVE"
+                android:textColor="@color/cardview_light_background" />
+        </TableRow>
+    </TableLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/videoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/simpleTableLayout"
+        android:background="#000"
+        tools:orientation="vertical"
+        tools:scrollbars="vertical" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnSettings"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#000"
+        android:clickable="true"
+        app:backgroundTint="#fff"
+        app:borderWidth="1dp"
+        app:fabCustomSize="46dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/setting" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnUpload"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#CA2222"
+        android:clickable="true"
+        android:visibility="invisible"
+        app:backgroundTint="#fff"
+        app:borderWidth="1dp"
+        app:fabCustomSize="46dp"
+        app:fabSize="auto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:maxImageSize="13.2dp"
+        app:srcCompat="@drawable/ic_record" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnStreaming"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#CA2222"
+        android:clickable="true"
+        android:visibility="invisible"
+        app:backgroundTint="#fff"
+        app:borderWidth="1dp"
+        app:fabCustomSize="46dp"
+        app:fabSize="auto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:maxImageSize="16dp"
+        app:srcCompat="@drawable/ic_cast" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnSwitchCamera"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#000"
+        android:clickable="true"
+        app:backgroundTint="#fff"
+        app:borderWidth="1dp"
+        app:fabCustomSize="46dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/scam" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,24 @@
+[
+	{
+		"Source": "https://t4.ftcdn.net/jpg/02/42/53/47/360_F_242534750_iSrJStH1JEAkGkJtBjcVAb6hZOcALwUt.jpg",
+		"FontStyle": "Arial",
+		"FontSize": "12px",
+		"Position": "TopLeft",
+		"Duration": "5:30",
+		"Type": "Intro"
+	},
+	{
+		"Source": "https://thumbs.dreamstime.com/b/live-stream-icon-red-vector-design-element-play-button-news-tv-online-broadcasting-stock-illustration-129809117.jpg",
+		"FontStyle": "Arial",
+		"FontSize": "12px",
+		"Position": "TopLeft",
+		"Type": "“LiveStreaming”"
+	},
+	{
+		"Source": "https://assets-global.website-files.com/5da60733afec9db1fb998273/5e719c52b0dc7db8632ead77_livestream-platforms-for-nonprofits-header.gif",
+		"FontStyle": "Arial",
+		"FontSize": "15px",
+		"Position": "BottomRight",
+		"Type": "LiveStreaming"
+	}
+]
